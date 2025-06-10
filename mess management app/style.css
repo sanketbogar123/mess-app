@@ -1,0 +1,118 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f2f2f2 0%, #cdeffd 100%);
+  background-attachment: fixed;
+  color: #333;
+}
+
+header {
+  background-color: #00695c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+#datetime {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+main, section {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.hidden {
+  display: none;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.admin-btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.admin-btn:hover {
+  background-color: #01579b;
+}
+
+.box, .admin-box {
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.red { background-color: #e53935; }
+.green { background-color: #43a047; }
+.blue { background-color: #1e88e5; }
+.yellow { background-color: #fdd835; color: black; }
+.purple { background-color: #8e24aa; }
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #00695c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.login-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.login-box {
+  width: 180px;
+  height: 180px;
+  background-color: #1e88e5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.login-box:hover {
+  transform: scale(1.08);
+}

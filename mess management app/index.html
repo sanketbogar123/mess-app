@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mess App</title>
+</head>
+<body>
+  <header>
+    <h1>Mess Management System</h1>
+    <div id="datetime"></div>
+  </header>
+
+  <!-- Home Page -->
+  <main id="login-selection">
+    <h2>Select Login</h2>
+    <div class="login-options">
+      <div class="login-box" onclick="showLogin('student')">Student Login</div>
+      <div class="login-box" onclick="showLogin('admin')">Admin Login</div>
+    </div>
+  </main>
+
+  <!-- Login Form -->
+  <section id="login-section" class="hidden">
+    <h2 id="login-title">Login</h2>
+    <input type="text" id="student-name" placeholder="Enter Name (Student only)"/>
+    <input type="password" id="password" placeholder="Enter Password"/>
+    <button onclick="login()">Login</button>
+    <button onclick="goBack()">Exit</button>
+  </section>
+
+  <!-- Student Panel -->
+  <section id="student-panel" class="hidden">
+    <h2>Welcome, <span id="student-greet-name"></span></h2>
+    <div class="box green">
+      <h3>Mark Attendance</h3>
+      <button onclick="markAttendance('breakfast')">Breakfast</button>
+      <button onclick="markAttendance('lunch')">Lunch</button>
+      <button onclick="markAttendance('dinner')">Dinner</button>
+    </div>
+    <div class="box blue">
+      <h3>Today's Menu</h3>
+      <p><strong>Breakfast:</strong> <span id="menu-breakfast"></span></p>
+      <p><strong>Lunch:</strong> <span id="menu-lunch"></span></p>
+      <p><strong>Dinner:</strong> <span id="menu-dinner"></span></p>
+    </div>
+    <button onclick="goBack()">Exit</button>
+  </section>
+
+  <!-- Admin Panel -->
+  <section id="admin-panel" class="hidden">
+    <h2>Admin Dashboard</h2>
+    <div class="grid">
+      <button class="admin-btn" onclick="showAdminSection('attendance')">Attendance</button>
+      <button class="admin-btn" onclick="showAdminSection('menu')">Menu Upload</button>
+      <button class="admin-btn" onclick="showAdminSection('taker')">Food Taker</button>
+      <button class="admin-btn" onclick="showAdminSection('waste')">Food Waste</button>
+    </div>
+
+    <!-- Section 1: Attendance -->
+    <div id="admin-attendance" class="admin-box hidden red">
+      <h3>Attendance</h3>
+      <p><strong>Breakfast:</strong> (<span id="count-breakfast">0</span>) <br><span id="list-breakfast"></span></p>
+      <p><strong>Lunch:</strong> (<span id="count-lunch">0</span>) <br><span id="list-lunch"></span></p>
+      <p><strong>Dinner:</strong> (<span id="count-dinner">0</span>) <br><span id="list-dinner"></span></p>
+    </div>
+
+    <!-- Section 2: Menu -->
+    <div id="admin-menu" class="admin-box hidden blue">
+      <h3>Menu Upload</h3>
+      <input type="text" id="input-breakfast" placeholder="Breakfast Menu"/>
+      <input type="text" id="input-lunch" placeholder="Lunch Menu"/>
+      <input type="text" id="input-dinner" placeholder="Dinner Menu"/>
+      <button onclick="updateMenu()">Upload Menu</button>
+    </div>
+
+    <!-- Section 3: Food Taker -->
+    <div id="admin-taker" class="admin-box hidden yellow">
+      <h3>Food Taker Alert</h3>
+      <input type="text" id="contact-number" placeholder="Enter Number"/>
+      <button onclick="sendFoodMessage()">Send Message</button>
+    </div>
+
+    <!-- Section 4: Waste -->
+    <div id="admin-waste" class="admin-box hidden purple">
+      <h3>Food Waste</h3>
+      <input type="number" id="waste-breakfast" placeholder="Breakfast Waste (kg)"/>
+      <input type="number" id="waste-lunch" placeholder="Lunch Waste (kg)"/>
+      <input type="number" id="waste-dinner" placeholder="Dinner Waste (kg)"/>
+      <button onclick="updateWaste()">Submit Waste</button>
+      <p><strong>Today's Waste:</strong> <span id="total-waste-today">0</span> kg</p>
+      <p><strong>Weekly Waste:</strong> <span id="weekly-waste">0</span> kg</p>
+    </div>
+
+    <button onclick="goBack()">Exit</button>
+  </section>
+</body>
+</html>
